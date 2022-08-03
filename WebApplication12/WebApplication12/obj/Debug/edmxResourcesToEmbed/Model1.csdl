@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mezuntakipModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="askerlikdurumlari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="askerlikdurum" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="users" Relationship="Self.FK_users_askerlikdurumlari" FromRole="askerlikdurumlari" ToRole="users" />
+  </EntityType>
+  <EntityType Name="bolumler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bolumadi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="programlar" Relationship="Self.FK_programlar_bolumler" FromRole="bolumler" ToRole="programlar" />
+    <NavigationProperty Name="users" Relationship="Self.FK_users_bolumler" FromRole="bolumler" ToRole="users" />
+  </EntityType>
+  <EntityType Name="calismadurumlari">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="calismadurum" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="users" Relationship="Self.FK_users_calismadurumlari" FromRole="calismadurumlari" ToRole="users" />
+  </EntityType>
+  <EntityType Name="cinsiyetler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cinsiyet" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="users" Relationship="Self.FK_users_cinsiyetler" FromRole="cinsiyetler" ToRole="users" />
+  </EntityType>
+  <EntityType Name="duyurular">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" />
+    <Property Name="Baslik" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="Icerik" Type="String" MaxLength="3000" FixedLength="true" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Precision="3" />
+    <Property Name="YazarId" Type="Int32" />
+    <Property Name="SonaErmeTarihi" Type="DateTime" Precision="3" />
+    <Property Name="Yayinda" Type="Boolean" />
+    <Property Name="Resimyolu" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="DosyaYolu" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="users" Relationship="Self.FK_duyurular_users" FromRole="duyurular" ToRole="users" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sehiradi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="users" Relationship="Self.FK_users_iller" FromRole="iller" ToRole="users" />
+  </EntityType>
+  <EntityType Name="medenihaller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="medenihal" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="users" Relationship="Self.FK_users_medenihaller" FromRole="medenihaller" ToRole="users" />
+  </EntityType>
+  <EntityType Name="ogrenimturleri">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ogrenimtur" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="users" Relationship="Self.FK_users_ogrenimturleri" FromRole="ogrenimturleri" ToRole="users" />
+  </EntityType>
+  <EntityType Name="programlar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="programadi" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+    <Property Name="BolumId" Type="Int16" />
+    <NavigationProperty Name="bolumler" Relationship="Self.FK_programlar_bolumler" FromRole="programlar" ToRole="bolumler" />
+    <NavigationProperty Name="users" Relationship="Self.FK_users_programlar" FromRole="programlar" ToRole="users" />
+  </EntityType>
+  <EntityType Name="roller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rol" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="users" Relationship="Self.FK_users_roller" FromRole="roller" ToRole="users" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Eposta" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="16" FixedLength="true" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="IllerId" Type="Int16" />
+    <Property Name="CinsiyetId" Type="Int16" />
+    <Property Name="RolId" Type="Int16" />
+    <Property Name="Dogumtarihi" Type="DateTime" Precision="0" />
+    <Property Name="Uyruk" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="MedeniHalId" Type="Int16" />
+    <Property Name="WebSitesi" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Linkedin" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="AskerlikDurumId" Type="Int16" Nullable="false" />
+    <Property Name="ProgramId" Type="Int16" />
+    <Property Name="OgretimTurId" Type="Int16" />
+    <Property Name="GirisYili" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="MezunYili" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+    <Property Name="DiplomaNotu" Type="Double" />
+    <Property Name="CalismaDurumId" Type="Int16" />
+    <Property Name="BolumId" Type="Int16" />
+    <NavigationProperty Name="askerlikdurumlari" Relationship="Self.FK_users_askerlikdurumlari" FromRole="users" ToRole="askerlikdurumlari" />
+    <NavigationProperty Name="bolumler" Relationship="Self.FK_users_bolumler" FromRole="users" ToRole="bolumler" />
+    <NavigationProperty Name="calismadurumlari" Relationship="Self.FK_users_calismadurumlari" FromRole="users" ToRole="calismadurumlari" />
+    <NavigationProperty Name="cinsiyetler" Relationship="Self.FK_users_cinsiyetler" FromRole="users" ToRole="cinsiyetler" />
+    <NavigationProperty Name="duyurular" Relationship="Self.FK_duyurular_users" FromRole="users" ToRole="duyurular" />
+    <NavigationProperty Name="iller" Relationship="Self.FK_users_iller" FromRole="users" ToRole="iller" />
+    <NavigationProperty Name="medenihaller" Relationship="Self.FK_users_medenihaller" FromRole="users" ToRole="medenihaller" />
+    <NavigationProperty Name="ogrenimturleri" Relationship="Self.FK_users_ogrenimturleri" FromRole="users" ToRole="ogrenimturleri" />
+    <NavigationProperty Name="programlar" Relationship="Self.FK_users_programlar" FromRole="users" ToRole="programlar" />
+    <NavigationProperty Name="roller" Relationship="Self.FK_users_roller" FromRole="users" ToRole="roller" />
+  </EntityType>
+  <Association Name="FK_users_askerlikdurumlari">
+    <End Role="askerlikdurumlari" Type="Self.askerlikdurumlari" Multiplicity="1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="askerlikdurumlari">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="AskerlikDurumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_programlar_bolumler">
+    <End Role="bolumler" Type="Self.bolumler" Multiplicity="0..1" />
+    <End Role="programlar" Type="Self.programlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bolumler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="programlar">
+        <PropertyRef Name="BolumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_bolumler">
+    <End Role="bolumler" Type="Self.bolumler" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bolumler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="BolumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_calismadurumlari">
+    <End Role="calismadurumlari" Type="Self.calismadurumlari" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="calismadurumlari">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="CalismaDurumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_cinsiyetler">
+    <End Role="cinsiyetler" Type="Self.cinsiyetler" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cinsiyetler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="CinsiyetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_duyurular_users">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="duyurular" Type="Self.duyurular" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="duyurular">
+        <PropertyRef Name="YazarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_iller">
+    <End Role="iller" Type="Self.iller" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="IllerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_medenihaller">
+    <End Role="medenihaller" Type="Self.medenihaller" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medenihaller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="MedeniHalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_ogrenimturleri">
+    <End Role="ogrenimturleri" Type="Self.ogrenimturleri" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ogrenimturleri">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="OgretimTurId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_programlar">
+    <End Role="programlar" Type="Self.programlar" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="programlar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="ProgramId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_roller">
+    <End Role="roller" Type="Self.roller" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="mezuntakipEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="askerlikdurumlari" EntityType="Self.askerlikdurumlari" />
+    <EntitySet Name="bolumler" EntityType="Self.bolumler" />
+    <EntitySet Name="calismadurumlari" EntityType="Self.calismadurumlari" />
+    <EntitySet Name="cinsiyetler" EntityType="Self.cinsiyetler" />
+    <EntitySet Name="duyurular" EntityType="Self.duyurular" />
+    <EntitySet Name="iller" EntityType="Self.iller" />
+    <EntitySet Name="medenihaller" EntityType="Self.medenihaller" />
+    <EntitySet Name="ogrenimturleri" EntityType="Self.ogrenimturleri" />
+    <EntitySet Name="programlar" EntityType="Self.programlar" />
+    <EntitySet Name="roller" EntityType="Self.roller" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="users" EntityType="Self.users" />
+    <AssociationSet Name="FK_users_askerlikdurumlari" Association="Self.FK_users_askerlikdurumlari">
+      <End Role="askerlikdurumlari" EntitySet="askerlikdurumlari" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_programlar_bolumler" Association="Self.FK_programlar_bolumler">
+      <End Role="bolumler" EntitySet="bolumler" />
+      <End Role="programlar" EntitySet="programlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_bolumler" Association="Self.FK_users_bolumler">
+      <End Role="bolumler" EntitySet="bolumler" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_calismadurumlari" Association="Self.FK_users_calismadurumlari">
+      <End Role="calismadurumlari" EntitySet="calismadurumlari" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_cinsiyetler" Association="Self.FK_users_cinsiyetler">
+      <End Role="cinsiyetler" EntitySet="cinsiyetler" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_duyurular_users" Association="Self.FK_duyurular_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="duyurular" EntitySet="duyurular" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_iller" Association="Self.FK_users_iller">
+      <End Role="iller" EntitySet="iller" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_medenihaller" Association="Self.FK_users_medenihaller">
+      <End Role="medenihaller" EntitySet="medenihaller" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_ogrenimturleri" Association="Self.FK_users_ogrenimturleri">
+      <End Role="ogrenimturleri" EntitySet="ogrenimturleri" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_programlar" Association="Self.FK_users_programlar">
+      <End Role="programlar" EntitySet="programlar" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_roller" Association="Self.FK_users_roller">
+      <End Role="roller" EntitySet="roller" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

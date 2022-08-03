@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/_GeneralLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<body>
+    <div class="container-fluid">
+        <main class="tm-main">
+            <div class="row tm-row">
+                <article class="col-12 col-md-6 tm-post">
+                    <hr class="tm-hr-primary"><br />
+                    <a>
+                        <div class="tm-post-link-inner">
+                            <img src="~/Images/bg.jpg" alt="Image" height="350" width="440">
+                        </div>
+                        <span class="position-absolute tm-new-badge">Mükemmel görünüyorsun</span>
+                        <h2 class="tm-pt-30 tm-color-primary tm-post-title">@Session["UsersAd"] @Session["UsersSoyAd"] Hoş geldiniz</h2>
+                    </a>
+                    <hr class="tm-hr-primary" />
+                    <p class="tm-pt-30">
+                        <h5>Ad:<b>@Session["UsersAd"]</b> != SoyAd:<b>@Session["UsersSoyAd"]</b></h5>
+                        <h5>Mail:<b>@Session["UsersMail"]</b> -= Web Sitesi:<b>@Session["UsersWebSite"]</b> Linkedin:<b>@Session["UsersLinkedin"]</b></h5>
+                        <h5>Telefon:<b>@Session["UsersPhone"]</b> %= İl:<b> @Session["UsersIl"] </b></h5>
+                        <h5>Cinsiyet:<b>@Session["UsersCinsiyey"]</b> == Doğum Tarihi:<b>@Session["UsersDTarihi"]</b> || Uyruk:<b>@Session["UsersUyruk"]</b> && Medeni hali:<b>@Session["UsersMedeniHali"]</b></h5>
+                        <h5>Askerlik:<b>@Session["UsersAskerlikDurumu"]</b></h5>
+                        <h5>Program:<b>@Session["UsersProgrami"]</b> += Öğretim türü:<b>@Session["UsersOgretimTuru"]</b> *= Başlangıç yılı:<b>@Session["UsersGirisYili"]</b> /= Mevzun yılı:<b>@Session["UsersMevzunYili"]</b> ++ Diploma notu:<b>@Session["UsersDiplomaNotu"]</b></h5>
+                        <h5>Çalışma durumu:<b>@Session["UsersCalismaDurumu"]</b></h5><br />
+                        <a rel="nofollow" target="_parent" href="@Url.Action("Edit","users")/@Session["UserId"]" class="tm-external-link">Düzenle</a>
+                    </p>
+                    <hr>
+                </article>
+                <article class="col-12 col-md-6 tm-post">
+                    <hr class="tm-hr-primary"><br />
+                    <h2 class="tm-pt-30 tm-color-primary tm-post-title">Duyurular</h2>
+                    <hr class="tm-hr-primary">
+                    <div>
+                        @{
+                            Html.RenderAction("UsersList", "Home");
+                        }
+                    </div>
+                </article>
+                
+
+                <hr class="col-12">
+                <div class="col-md-6 col-12 tm-color-gray">
+                    <a rel="nofollow" target="_blank" href="https://uludag.edu.tr/orhangazi" class="tm-external-link">Orhangazi MYO</a>
+                </div>
+                <div class="col-md-6 col-12 tm-color-gray tm-copyright">
+                    Uludağ Üniversitesi Orhangazi Yeni Asil Çelik Meslek Yüksek Okulu
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="~/Scripts/General/js/jquery.min.js"></script>
+    <script src="~/Scripts/General/js/templatemo-script.js"></script>
+</body>
+</html>
+
+@*<article class="col-12 col-md-6 tm-post">
+        <hr class="tm-hr-primary">
+        <a href="post.html" class="effect-lily tm-post-link tm-pt-60">
+            <div class=" tm-post-link-inner">
+                <img src="img/img-02.jpg" alt="Image" class="img-fluid">
+            </div>
+            <span class="position-absolute tm-new-badge">New</span>
+            <h2 class="tm-pt-30 tm-color-primary tm-post-title">Multi-purpose blog template</h2>
+        </a>
+        <p class="tm-pt-30">
+            <a rel="nofollow" href="https://templatemo.com/tm-553-xtra-blog" target="_blank">Xtra Blog</a>  is a multi-purpose HTML CSS template from TemplateMo website.
+            Blog list, single post, about, contact pages are included. Left sidebar fixed width and content area is a fluid full-width.
+        </p>
+        <div class="d-flex justify-content-between tm-pt-45">
+            <span class="tm-color-primary">Creative . Design . Business</span>
+            <span class="tm-color-primary">June 16, 2020</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between">
+            <span>48 comments</span>
+            <span>by Admin Sam</span>
+        </div>
+    </article>*@

@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mezuntakipModelStoreContainer" CdmEntityContainer="mezuntakipEntities">
+    <EntitySetMapping Name="askerlikdurumlari">
+      <EntityTypeMapping TypeName="mezuntakipModel.askerlikdurumlari">
+        <MappingFragment StoreEntitySet="askerlikdurumlari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="askerlikdurum" ColumnName="askerlikdurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bolumler">
+      <EntityTypeMapping TypeName="mezuntakipModel.bolumler">
+        <MappingFragment StoreEntitySet="bolumler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bolumadi" ColumnName="bolumadi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="calismadurumlari">
+      <EntityTypeMapping TypeName="mezuntakipModel.calismadurumlari">
+        <MappingFragment StoreEntitySet="calismadurumlari">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="calismadurum" ColumnName="calismadurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cinsiyetler">
+      <EntityTypeMapping TypeName="mezuntakipModel.cinsiyetler">
+        <MappingFragment StoreEntitySet="cinsiyetler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="duyurular">
+      <EntityTypeMapping TypeName="mezuntakipModel.duyurular">
+        <MappingFragment StoreEntitySet="duyurular">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Icerik" ColumnName="Icerik" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="YazarId" ColumnName="YazarId" />
+          <ScalarProperty Name="SonaErmeTarihi" ColumnName="SonaErmeTarihi" />
+          <ScalarProperty Name="Yayinda" ColumnName="Yayinda" />
+          <ScalarProperty Name="Resimyolu" ColumnName="Resimyolu" />
+          <ScalarProperty Name="DosyaYolu" ColumnName="DosyaYolu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iller">
+      <EntityTypeMapping TypeName="mezuntakipModel.iller">
+        <MappingFragment StoreEntitySet="iller">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sehiradi" ColumnName="sehiradi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medenihaller">
+      <EntityTypeMapping TypeName="mezuntakipModel.medenihaller">
+        <MappingFragment StoreEntitySet="medenihaller">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="medenihal" ColumnName="medenihal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ogrenimturleri">
+      <EntityTypeMapping TypeName="mezuntakipModel.ogrenimturleri">
+        <MappingFragment StoreEntitySet="ogrenimturleri">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ogrenimtur" ColumnName="ogrenimtur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="programlar">
+      <EntityTypeMapping TypeName="mezuntakipModel.programlar">
+        <MappingFragment StoreEntitySet="programlar">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="programadi" ColumnName="programadi" />
+          <ScalarProperty Name="BolumId" ColumnName="BolumId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roller">
+      <EntityTypeMapping TypeName="mezuntakipModel.roller">
+        <MappingFragment StoreEntitySet="roller">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="mezuntakipModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="mezuntakipModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="IllerId" ColumnName="IllerId" />
+          <ScalarProperty Name="CinsiyetId" ColumnName="CinsiyetId" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+          <ScalarProperty Name="Dogumtarihi" ColumnName="Dogumtarihi" />
+          <ScalarProperty Name="Uyruk" ColumnName="Uyruk" />
+          <ScalarProperty Name="MedeniHalId" ColumnName="MedeniHalId" />
+          <ScalarProperty Name="WebSitesi" ColumnName="WebSitesi" />
+          <ScalarProperty Name="Linkedin" ColumnName="Linkedin" />
+          <ScalarProperty Name="AskerlikDurumId" ColumnName="AskerlikDurumId" />
+          <ScalarProperty Name="ProgramId" ColumnName="ProgramId" />
+          <ScalarProperty Name="OgretimTurId" ColumnName="OgretimTurId" />
+          <ScalarProperty Name="GirisYili" ColumnName="GirisYili" />
+          <ScalarProperty Name="MezunYili" ColumnName="MezunYili" />
+          <ScalarProperty Name="DiplomaNotu" ColumnName="DiplomaNotu" />
+          <ScalarProperty Name="CalismaDurumId" ColumnName="CalismaDurumId" />
+          <ScalarProperty Name="BolumId" ColumnName="BolumId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

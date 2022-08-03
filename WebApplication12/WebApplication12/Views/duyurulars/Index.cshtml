@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WebApplication12.duyurular>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_GeneralLayout.cshtml";
+}
+<div class="container-fluid">
+    <main class="tm-main">
+        <div class="row tm-row">
+            <h2>Duyurular</h2>
+
+            <p>
+                @if (Session["UsersId"].ToString() == "1")
+                {
+                    @Html.ActionLink("Yeni duyuru oluştur", "Create")
+                }
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Baslik)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Icerik)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Tarih)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SonaErmeTarihi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Yayinda)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Resimyolu)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DosyaYolu)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.users.Ad)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Baslik)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Icerik)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tarih)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SonaErmeTarihi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Yayinda)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Resimyolu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DosyaYolu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.users.Ad)
+                        </td>
+
+                        <td>
+                            @if (Session["UsersId"].ToString() == "1")
+                            {
+                                @Html.ActionLink("Düzenle", "Edit", new { id = item.id }); <br />
+                                @Html.ActionLink("Sil ", "Delete", new { id = item.id });
+                            }
+                            @Html.ActionLink("Detay", "Details", new { id = item.id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </main>
+</div>

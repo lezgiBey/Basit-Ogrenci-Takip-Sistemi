@@ -1,0 +1,160 @@
+﻿@model IEnumerable<WebApplication12.users>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_GeneralLayout.cshtml";
+}
+<div class="container-fluid">
+    <main class="tm-main">
+        <div class="row tm-row">
+            <h2>Index</h2>
+
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Ad)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Soyad)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Eposta)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Sifre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telefon)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Dogumtarihi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Uyruk)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.WebSitesi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Linkedin)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.GirisYili)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MezunYili)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DiplomaNotu)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.askerlikdurumlari.askerlikdurum)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.bolumler.bolumadi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.calismadurumlari.calismadurum)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.cinsiyetler.cinsiyet)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.iller.sehiradi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.medenihaller.medenihal)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ogrenimturleri.ogrenimtur)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.programlar.programadi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.roller.rol)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ad)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Soyad)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Eposta)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sifre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefon)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Dogumtarihi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Uyruk)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.WebSitesi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Linkedin)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GirisYili)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MezunYili)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DiplomaNotu)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.askerlikdurumlari.askerlikdurum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.bolumler.bolumadi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.calismadurumlari.calismadurum)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.cinsiyetler.cinsiyet)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.iller.sehiradi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.medenihaller.medenihal)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ogrenimturleri.ogrenimtur)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.programlar.programadi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.roller.rol)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </main>
+</div>

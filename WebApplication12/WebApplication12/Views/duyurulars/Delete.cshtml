@@ -1,0 +1,95 @@
+﻿@model WebApplication12.duyurular
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_GeneralLayout.cshtml";
+}
+<div class="container-fluid">
+    <main class="tm-main">
+        <div class="row tm-row">
+            <h2>Sil</h2>
+
+            <h3>Duyuruyu silmek istediğinize emin misiniz?</h3>
+            <div>
+                <h4>Duyurular</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Baslik)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Baslik)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Icerik)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Icerik)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Tarih)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Tarih)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.SonaErmeTarihi)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SonaErmeTarihi)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Yayinda)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Yayinda)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Resimyolu)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Resimyolu)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DosyaYolu)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DosyaYolu)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.users.Ad)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.users.Ad)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Sil" class="btn btn-dark" /> |
+                        @Html.ActionLink("Duyurulara geri dön", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+    </main>
+</div>

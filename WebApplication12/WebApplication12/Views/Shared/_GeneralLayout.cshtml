@@ -1,0 +1,65 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uludağ Üniversitesi Yeni Orhangazi Yeniköy Asil Çelik Meslek Yüksekokulu</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="~/Scripts/General/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Scripts/General/css/templatemo-xtra-blog.css" rel="stylesheet">
+</head>
+<header class="tm-header" id="tm-header">
+    <div class="tm-header-wrapper">
+        <center>
+            <img src="~/Images/orhangazimyo.png" alt="Image" class="img-fluid" width="200" height="200">
+        </center>
+
+        <div class="tm-site-header"><hr class="col-12">
+            
+            <h1 class="text-center">Uludağ Üniversitesi Orhangazi Yeniköy Asil Çelik Meslek Yüksekokulu</h1>
+        </div>
+        <nav class="tm-nav" id="tm-nav">
+            <ul>
+                <li class="tm-nav-item active">
+                    <a href="@Url.Action("Index","Home")" class="tm-nav-link">
+                        <i class="fas fa-home"></i>
+                        Ana Sayfa
+                    </a>
+                </li>
+                <li class="tm-nav-item active">
+                    <a href="@Url.Action("Index","duyurulars")" class="tm-nav-link">
+                        <i class="fas fa-home"></i>
+                        Duyurular
+                    </a>
+                </li>
+                @if (Session["UsersId"].ToString() == "1")
+                {
+                    <li class="tm-nav-item active">
+                        <a href="@Url.Action("Index","users")" class="tm-nav-link">
+                            <i class="fas fa-home"></i>
+                            Kullanıcılar
+                        </a>
+                    </li>
+                }
+            </ul>            
+        </nav>
+        <div class="tm-mb-65">
+            <a href="@Url.Action("Logout","Security")" class="tm-nav-link">
+                <i class="fas fa-home"></i>
+                Çıkış Yap
+            </a>
+        </div>
+    </div>
+</header>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

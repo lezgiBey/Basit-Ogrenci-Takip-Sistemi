@@ -1,0 +1,15 @@
+﻿@model IEnumerable<WebApplication12.Models.DuyurularModel>
+
+<table>
+    <tr>
+        <th>Başlık</th>
+        <th>Icerik</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Baslik</td>
+            <td>@item.Icerik</td>
+        </tr>
+    }
+</table>

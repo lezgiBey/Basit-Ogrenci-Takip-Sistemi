@@ -1,0 +1,199 @@
+﻿@model WebApplication12.users
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_GeneralLayout.cshtml";
+}
+<div class="container-fluid">
+    <main class="tm-main">
+        <div class="row tm-row">
+            <h2>Sil</h2>
+
+            <h3>Kullanıcıyı silmek istediğinize emin misiniz?</h3>
+            <div>
+                <h4>Kullanıcı</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Ad)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Ad)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Soyad)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Soyad)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Eposta)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Eposta)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Sifre)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Sifre)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Telefon)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Telefon)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Dogumtarihi)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Dogumtarihi)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Uyruk)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Uyruk)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.WebSitesi)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.WebSitesi)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Linkedin)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Linkedin)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.GirisYili)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.GirisYili)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.MezunYili)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MezunYili)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DiplomaNotu)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DiplomaNotu)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.askerlikdurumlari.askerlikdurum)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.askerlikdurumlari.askerlikdurum)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.bolumler.bolumadi)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.bolumler.bolumadi)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.calismadurumlari.calismadurum)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.calismadurumlari.calismadurum)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.cinsiyetler.cinsiyet)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.cinsiyetler.cinsiyet)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.iller.sehiradi)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.iller.sehiradi)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.medenihaller.medenihal)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.medenihaller.medenihal)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ogrenimturleri.ogrenimtur)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ogrenimturleri.ogrenimtur)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.programlar.programadi)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.programlar.programadi)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.roller.rol)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.roller.rol)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Sil" class="btn btn-dark" /> |
+                        @Html.ActionLink("Kullanıcılara geri dön", "Index")
+                    </div>
+                }
+            </div>
+        </div>
+    </main>
+</div>
